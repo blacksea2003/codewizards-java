@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="foosball.css" rel="stylesheet"/>
+        <script
+                src="https://code.jquery.com/jquery-3.1.1.min.js"
+                integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+                crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+        <script src="http://projects.codewizardshq.com/codewizards.js"></script>
+        <title>Foosball</title>
+    </head>
+    <body>
+        <div id="canvas"></div>
+        <script>
+            $(document).ready(function(){
+                start();
+              /******************************************************************************
+              *                                                                             *
+              *                               H O M E W O R K                               *
+              *                                                                             *
+              *   Make players animate vertically infinitely inside addPlayer function.     *             
+              *                                                                             *
+              ******************************************************************************/
+              
+                addBackground("field.jpg");
+
+                var myplayer = addImage("myplayer.png", 40);
+                positionEl(myplayer, 850, 280);
+                draggable(myplayer);
+
+                var goal = addImage("goal.png", 25);
+                positionEl(goal, 25, 265);
+                
+                var players = [];
+                var playerCount = 0;
+
+                function addPlayer(x, y){
+                    players[playerCount] = addImage("player.png", 30);
+                    positionEl(players[playerCount], x, y);
+                    moveY(players[playerCount], y, y+100, 'infinite', true, 250);
+                  
+                    playerCount++;
+                }
+
+                addPlayer(350, 0);
+                addPlayer(350, 150);
+                addPlayer(350, 300);
+                addPlayer(350, 450);
+
+                addPlayer(250, 50);
+                addPlayer(250, 200);
+                addPlayer(250, 350);
+
+                addPlayer(150, 0);
+                addPlayer(150, 150);
+                addPlayer(150, 300);
+                addPlayer(150, 450);
+
+                addPlayer(50, 200);
+
+            });
+        </script>
+    </body>
+</html>

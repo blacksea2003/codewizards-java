@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="foosball.css" rel="stylesheet"/>
+        <script
+                src="https://code.jquery.com/jquery-3.1.1.min.js"
+                integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+                crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+        <script src="http://projects.codewizardshq.com/codewizards.js"></script>
+        <title>Foosball</title>
+    </head>
+    <body>
+        <div id="canvas"></div>
+        <script>
+            $(document).ready(function(){
+                start();
+              /******************************************************************************
+              *                                                                             *
+              *   Step 1: Give background of football field to the game                     *
+              *                                                                             *
+              *   Step 2: Let’s add our main player and position it on right goal post      *              
+              *                                                                             *
+              *   Step 3: Make our player draggable                                         *             
+              *                                                                             *
+              *   Step 4: Add goal post on left side of field                               *             
+              *                                                                             *
+              *   Step 5: Initialize an array, to be used for storing all players.          *             
+              *                                                                             *
+              *   Step 6: Create a function named addPlayer                                 *
+              *           with x position and y position as arguments                       *             
+              *                                                                             *
+              *   Step 7: Inside function named addPlayer add player image and position it. *             
+              *                                                                             *
+              *   Step 8: Call function named addPlayer to add players in the field.        *             
+              *                                                                             *
+              ******************************************************************************/
+              
+               addBackground("field.jpg");
+               var myPlayer = addImage("myplayer.png",40);
+               positionEl(myPlayer,850,280);
+               draggable(myPlayer);
+              
+               var goal = addImage("goal.png",25);
+              positionEl(goal,25,265);
+              
+              var players = [];
+              var playerCount = 0;
+              
+              function addPlayer(x,y){
+                players[playerCount] = addImage("player.png",30);
+                        positionEl(players[playerCount],x,y);
+                playerCount= playerCount + 1;
+              }
+              
+              addPlayer(350, 0);
+              addPlayer(350, 150);
+              addPlayer(350, 300);
+addPlayer(350, 450);
+addPlayer(250, 50);
+addPlayer(250, 200);
+addPlayer(250, 350);
+addPlayer(150, 0);
+addPlayer(150, 150);
+addPlayer(150, 300);
+addPlayer(150, 450);
+addPlayer(50, 200);
+              
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="robot.css" rel="stylesheet"/>
+        <script
+                src="https://code.jquery.com/jquery-3.1.1.min.js"
+                integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+                crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Lato|Overpass+Mono|Playfair+Display+SC" rel="stylesheet">
+        <script src="http://projects.codewizardshq.com/codewizards.js"></script>
+        <title>Rise of Robots</title>
+    </head>
+    <body>
+        <div id="canvas"></div>
+        <script>
+            $(document).ready(function(){
+              /******************************************************************************
+              *                                                                             *
+              *                                Exercise 1                                   *
+              *                                                                             *
+              *              Instead of if-else statements, use switch statement            *
+              *                    in talk function of Rise of Robots.                      *
+              *                                                                             *
+              ******************************************************************************/
+                start();
+                addBackground('background.jpg');
+                addHeading("Rise of robots", 64);
+                bgMusic = addSound('music.mp3');
+                bgMusic.play();
+              
+                var messageBox = input("Type your message here");
+                var btn = addButton("Send");
+                var response = addText('Your reply will come here', 24)
+
+                function talk(msg){
+                  
+                  if (msg == "Hi"){
+            	 	 return "Hello";
+                  } else if(msg == "How are you"){
+                     return "I am fine, what about you? ";
+                  } else if(msg == "I am fine too."){
+                     return "Glad to know that ";
+                  } else if(msg == "I am not fine"){
+                     return "What happened? ";
+                  } else if(msg == "Who are you?"){
+                     return "I am an AI agent from future.";
+                  } else if(msg == "What is your name?"){
+                     return "My creator called me Jarvis";
+                  } else {
+		              return "I am unable to understand you";
+                  }
+                }
+                
+                function sendMessage(){
+                    var msg = messageBox.val();
+                    var reply = talk(msg);
+                    updateText(response, reply);
+                }
+                btn.click(sendMessage);
+              
+            });
+        </script>
+    </body>
+</html>

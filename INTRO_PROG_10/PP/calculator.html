@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="calculator.css" rel="stylesheet"/>
+        <script
+                src="https://code.jquery.com/jquery-3.1.1.min.js"
+                integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+                crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Lato|Shadows+Into+Light+Two|Playfair+Display+SC" rel="stylesheet">
+        <script src="http://projects.codewizardshq.com/codewizards.js"></script>
+        <title>Ask Einstein</title>
+    </head>
+    <body>
+        <div id="canvas"></div>
+        <script>
+            $(document).ready(function(){
+                start();
+              /******************************************************************************
+              *                                                                             *
+              *   Exercise 2: Add an input box, two number inputs and a button              *
+              *                                                                             *
+              *   Exercise 3: Store value of all inputs in different variables              *
+              *               on button click                                               *
+              *                                                                             *
+              *   Exercise 4 Add a switch block in calculate function,                      *
+              *              that performs multiplication and subtraction.                  *
+              *                                                                             *
+              ******************************************************************************/
+                addBackground('background.jpg');
+                addHeading("Ask Einstein", 64);
+                var result = addText(' ', 40)
+                positionEl(result, 400, 180);
+                
+                /* Do exercises here */
+
+              var num1Box = inputNum("Enter First Number");
+              var num2Box = inputNum("Enter Second Number");
+              var operatorBox = input("+,-,*,/,%");
+              var btn = addButton("calculate");
+              function calculate(){
+                var num1 = num1Box.val();
+                var num2 = num2Box.val();
+                var operator = operatorBox.val();
+                var answer;
+                switch(operator){
+                  case "*":
+                    answer = num1 * num2;
+                    break;
+                  case "/":
+                    answer = num1 / num2;
+                    break;
+                     case "-":
+                    answer = num1 - num2;
+                    break;
+                     case "+":
+                    answer = num1 + num2;
+                    break;
+                     case "%":
+                    answer = (num1 + num2)/2;
+                    break;
+                  default:
+                    answer = "error";
+                    
+                    
+                }
+                updateText(result,answer);
+              }
+              btn.click(calculate);
+              
+              
+            });
+        </script>
+    </body>
+</html>
