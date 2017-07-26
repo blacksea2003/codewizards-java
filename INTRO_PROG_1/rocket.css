@@ -1,0 +1,130 @@
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    background-color:black;
+    color: black;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lato', sans-serif;
+    text-align: right;
+}
+
+#canvas {
+    width:1366px;
+    height:600px;
+    position:relative;
+    overflow: hidden;
+    padding:50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background:url('background.jpg');
+}
+
+#foreground{
+    position: absolute;
+    bottom: -5px;
+    left: 0px;
+    z-index: 200;
+}
+
+
+button{
+    position:absolute;
+    top:230px;
+    height:50px;
+    left:300px;
+    border:2px solid coral;
+    padding:10px;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: darkred;
+    border-radius: 5px;
+    color: white;
+    font-family: 'PT Mono', monospace;
+}
+
+button:hover{
+    background-color: red;
+    border-color: darkred;
+}
+
+button:focus, input:focus, input:active{
+    outline: none;
+}
+
+button:active{
+    background-color: black;
+}
+
+input{
+    border: none;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    background: transparent;
+    outline: none;
+    border-bottom: 1px solid #fff;
+}
+
+.container{
+    position: absolute;
+    top: 300px;
+    left: 150px;
+    color: lightgreen;
+    text-align: center;
+    font-family: 'PT Mono', monospace;
+    background:#000;
+}
+
+.container p{
+        text-align: left;
+}
+
+.container:after{
+    display: block;
+    content: "";
+    clear: both;
+}
+
+#countdown{
+    font-size:80px;
+    line-height: 1.5px;
+}
+
+#messageCode{
+    color:#ffca02;
+    display: block;
+}
+
+#error{
+    color:red;
+    text-align: center;
+    padding-top:5px;
+}
+
+#messages{
+    float: left;
+    width:250px;
+    padding: 20px;
+    border-right: 1px solid #333;
+}
+
+#messages p:before{
+    content: "> ";
+}
+
+#launchTime{
+    float: right;
+    width:120px;
+    padding: 20px;
+}
+
+#launchTime p{
+    text-align: center;
+}

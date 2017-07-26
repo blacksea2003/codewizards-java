@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="fish.css" rel="stylesheet"/>
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+  <script src="http://projects.codewizardshq.com/codewizards.js"></script>
+  <title>Aquarium</title>
+</head>
+<body>
+  <div id="canvas"></div>
+  <script>
+
+
+    $(document).ready(function() {
+
+
+    start();
+    addHeading('Finding nemo');
+    
+    /************************************************************/
+    /*Exercise 1: Add a fish and move it multiple times */
+    /*Exercise 2: Create a function to add fish*/
+
+      
+    function addFish(){
+    var fish1 = addImage("fish2.png",150);
+    positionEl = (fish1,10,400);
+    moveX(fish1,100,1100,"infinite",true);
+}
+
+    addFish();
+    addFish();
+    addFish();
+    addFish();
+    addFish();
+    addFish();
+    addFish();
+    addFish();
+    addFish();
+    addFish();
+    addFish();
+    
+    function addBubble(){  
+    var el = addImage("bubble.png",50);
+    positionEl = (el,10,900);
+    moveY(el,900,-10,"infinite",false);
+    }
+    
+    addBubble();  
+      
+      
+     });
+  </script>
+</body>
+</html>

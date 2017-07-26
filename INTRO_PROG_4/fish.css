@@ -1,0 +1,57 @@
+html,body {
+  width:100%;
+  height:100%;
+  margin:0;
+}
+
+body {
+  background-image:url('background.png');
+  background-color:skyblue;
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bubble{
+    background-color: skyblue;
+    border-radius: 50%;
+    opacity: 0.6;
+}
+
+#canvas {
+  width:1366px;
+  height:600px;
+  position:relative;
+}
+
+#heading{
+  font-size:72px;
+  text-align:center;
+font-family: 'Poiret One', cursive;
+  color: white;
+    font-weight: lighter;
+  animation: 1s glow infinite;
+  animation-direction: alternate;
+}
+
+.flipH{
+    transform: scaleX(-1);
+}
+
+.bubble{
+    border-radius: 50%;
+    width:50px;
+    height: 50px;
+    
+}
+
+@keyframes glow{
+  0% {
+    text-shadow:0 0 0 rgba(255,255,255,1);
+  }
+  100% {
+    text-shadow:0 0 10px rgba(255,255,255,1);  }
+}

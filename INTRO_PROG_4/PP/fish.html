@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="fish.css" rel="stylesheet"/>
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+  <script src="http://projects.codewizardshq.com/codewizards.js"></script>
+  <title>Aquarium</title>
+</head>
+<body>
+  <div id="canvas"></div>
+  <script>
+  $(document).ready(function() {
+    start();
+    addHeading('Finding nemo');
+ 
+    /*HOMEWORK : pass size and source also as arguments to addFish()*/
+   
+    function addFish(fishX, fishY){
+        var fish1 = addImage('fish.png', 100);
+        positionEl(fish1, fishX, fishY);
+        moveX(fish1, fishX, 1100, 10, true);
+    }
+    
+    addFish(10, 400);
+    addFish(100, 300);
+    addFish(400, 500);
+    addFish(200, 450);
+    addFish(100, 150);
+                        
+
+  var addBubble = function(X, Y, size){
+        var bubble = addImage('bubble.png', size);
+        positionEl(bubble, X, Y);
+        moveY(bubble, Y, -300, 'infinite', false);
+    } 
+    
+    addBubble(100, 500,  20);
+    addBubble(230, 550,  15);
+    addBubble(370, 450,  30);
+    addBubble(200, 350,  24);
+    addBubble(150, 400,  10);
+    addBubble(700, 500,  20);
+    addBubble(630, 400,  15);
+    addBubble(870, 450,  30);
+    addBubble(900, 350,  24);
+    addBubble(1050, 400, 10);
+
+    
+  });
+  </script>
+</body>
+</html>

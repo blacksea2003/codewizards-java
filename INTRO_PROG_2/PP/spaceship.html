@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="spaceship.css" rel="stylesheet"/>
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  <script src='../animation-polyfill.js'></script>
+  <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+  <script src="http://projects.codewizardshq.com/codewizards.js"></script>
+  <title>Spaceship</title>
+</head>
+<body>
+  <div id="canvas"></div>
+  <audio src="music.mp3" loop autoplay ></audio>
+  <script>
+  $(document).ready(function() {
+    start();
+    
+    addHeading('Space Wars', 100);
+    
+    var shipSize = 100;
+    var top = 300;
+    var left = 100;
+    var isEngineOn = true;
+    var nameOfShip = "arc";
+    
+    addSpaceship(top,left,shipSize,nameOfShip,isEngineOn);
+
+    addSpaceship(top-200,left-100,shipSize, nameOfShip, isEngineOn);
+    addSpaceship(top,left+800,shipSize, nameOfShip, isEngineOn);
+    
+    /* Homework: Add more ships */
+    
+    
+    
+    
+    
+    
+  });
+  </script>
+</body>
+</html>

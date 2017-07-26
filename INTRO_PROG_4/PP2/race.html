@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="race.css" rel="stylesheet"/>
+        <script
+                src="https://code.jquery.com/jquery-3.1.1.min.js"
+                integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+                crossorigin="anonymous"></script>
+        <script src="http://projects.codewizardshq.com/codewizards.js"></script>
+        <title>Car race</title>
+    </head>
+    <body>
+        <div id="canvas"></div>
+        <script>
+            $(document).ready(function() {
+                start();
+                addBackground( 'road2.png');
+                
+                var playerSpeed = 10;
+                var playerImage = "car.png";
+                
+                function addPlayer(){
+                    var player = addImage(playerImage, '100');
+                    positionEl(player, 0, 425);
+                    moveX(player, 0, 1350, 1, false, playerSpeed);
+                }
+                
+                addPlayer();
+              
+              
+             /* Create a function to add other players with y position and speed as arguments */
+              /*Add four other players at y position 25, 125, 225, 325 and speed any number between 100 and 150*/
+                
+              
+              
+              
+              
+              
+              
+              
+            });
+        </script>
+    </body>
+</html>
