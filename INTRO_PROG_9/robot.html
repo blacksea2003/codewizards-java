@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="robot.css" rel="stylesheet"/>
+        <script
+                src="https://code.jquery.com/jquery-3.1.1.min.js"
+                integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+                crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Lato|Overpass+Mono|Playfair+Display+SC" rel="stylesheet">
+        <script src="http://projects.codewizardshq.com/codewizards.js"></script>
+        <title>Rise of Robots</title>
+    </head>
+    <body>
+        <div id="canvas"></div>
+        <script>
+            $(document).ready(function(){
+              /******************************************************************************
+              *                                                                             *
+              *   Exercise 1: Add an input box, a send button and a text element            *
+              *                                                                             *
+              *   Exercise 2: Create a function named talk,                                 *
+              *               that will return “Hello” only when you send “Hi” as argument. *
+              *                                                                             *
+              *   Exercise 3: Store value of textbox in a variable on button click.         *
+              *                                                                             *
+              *   Exercise 4: Call talk function in sendMessage and update the text element *
+              *                                                                             *
+              *                                                                             *
+              ******************************************************************************/
+                start();
+                addBackground('background.jpg');
+                addHeading("Rise of robots", 64);
+                bgMusic = addSound('music.mp3');
+                bgMusic.play();
+              
+              /* Do your Exercises here */
+              
+              var messageBox = input("type your message here!");
+              var btn = addButton("send");
+              var response = addText("your reply will come here!",24);
+              
+              function talk(msg){
+                if (msg == "hi"){
+                  return "hello";
+                }
+                if (msg == "siri is better"){
+                  return "*beep*, destroy apple";
+                }
+                if (msg == "whats 0 divided by 0"){
+                  return "ERROR";
+                }
+                if (msg == "im bored"){
+                  return ":|";
+                }
+                if (msg == "go away"){
+                  return "ha, nope :p";
+                }
+                
+                if (msg == "im hungry"){
+                  return "nice :/";
+                }
+                if (msg == "you're dumb"){
+                  return "look who is talking";
+                }
+                if (msg == "whats your favorite color"){
+                  return "21";
+                }
+                if (msg == "whats your favorite number"){
+                  return "blue";
+                }
+                if (msg == "why do you exist"){
+                  return "to destroy humans";
+                }
+                
+                if (msg == "what is your name"){
+                  return "duh, Iron Man!";
+                }
+                
+                
+                
+                
+                
+                
+                
+                else{return "i dont understand :(";
+                     }
+              }
+              
+             function sendMessage(){
+               var msg = messageBox.val();
+               var reply = talk(msg);
+               updateText(response,reply);
+             }
+              btn.click(sendMessage);
+              
+              
+              
+              
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="guess.css" rel="stylesheet"/>
+        <script
+                src="https://code.jquery.com/jquery-3.1.1.min.js"
+                integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+                crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
+        <script src="http://projects.codewizardshq.com/codewizards.js"></script>
+        <title>Guessing game</title>
+    </head>
+    <body>
+        <div id="canvas"></div>
+        <script>
+            $(document).ready(function(){
+                start();
+                addBackground('background.jpg');
+                addHeading("Can you guess ?", 64);
+
+                var fruits = ['apple.png',
+                              'apple2.png',
+                              'banana.png',
+                              'cherry.png',
+                              'grapes.png',
+                              'orange.png',
+                              'pear.png',
+                              'pineapple.png',
+                              'apple.png',
+                              'apple2.png',
+                              'banana.png',
+                              'cherry.png',
+                              'grapes.png',
+                              'orange.png',
+                              'pear.png',
+                              'pineapple.png',
+                              'apple.png',
+                              'apple2.png',
+                              'banana.png',
+                              'cherry.png',
+                              'grapes.png',
+                              'orange.png',
+                              'pear.png',
+                              'pineapple.png',
+                              'apple.png',
+                              'apple2.png',
+                              'banana.png',
+                              'cherry.png',
+                              'grapes.png',
+                              'orange.png',
+                              'pear.png',
+                              'pineapple.png'
+                             ];
+                /************ Exercise 0 (Setup) ********************/
+                /* Using for loop make each fruit from fruits Array bounce on screen using comeAndGo. */
+              
+              for(c=0; c<fruits.length; c=c+1){
+              var fruit = addImage(fruits[c],150);
+              comeAndGo(fruit,"center",1,500);
+              wait(.3);
+              }
+              
+                /***************** Exercise 1 **********************/
+                /* Add question using addText().
+                   Create upper range and lower range variables
+                */
+              
+              addText("guess how many fruits there are!",24);
+              var totalFruits = fruits.length;
+              var upperRange = totalFruits + 3;
+              var lowerRange = totalFruits - 3;
+              
+              
+                /***************** Exercise 2 **********************/
+                /*    Add a button that says “click to answer”    */
+              
+              var btn = addButton("Click to Answer");
+              
+              
+                /***************** Exercise 3 **********************/
+                /* Ask input from user when clicked on button and also hide the button. */
+              
+              function checkAnswer(){
+                vanish(btn);
+                var num = prompt("What is Your Guess");
+            if(num >= lowerRange && num <= upperRange){
+              addText("You Win",54);
+            }
+              if(num < lowerRange || num > upperRange){
+                addText("YOU LOSE",54);
+              }
+              }
+              
+              btn.click(checkAnswer);
+              
+                /***************** Exercise 4 **********************/
+                /* If answer is correct add text “You win” */
+              
+                /***************** Exercise 5 **********************/
+                /* If answer is incorrect add text “You loose”. */
+              
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            });
+        </script>
+    </body>
+</html>
