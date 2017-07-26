@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="ninja.css" rel="stylesheet"/>
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    
+  <script src="http://projects.codewizardshq.com/codewizards.js"></script>
+  <title>Fruit Ninja</title>
+</head>
+    <body>
+        <div id="canvas"></div>
+        <script>
+            $(document).ready(function(){
+                start();
+                addBackground('background.png');
+                addHeading("Fruit Ninja", 64);
+                var music = addSound('music.mp3');
+                music.play();
+                var score = 0;
+                var scoreText = addText(score,30);
+                positionEl(scoreText,10,10);
+                
+                var fruits = ['apple.png',
+                              'apple2.png',
+                              'banana.png',
+                              'cherry.png',
+                              'grapes.png',
+                              'orange.png',
+                              'pear.png',
+                              'pineapple.png'
+                             ];
+              
+              
+                for(i=0; i<fruits.length; i++){
+                  var fruit = addImage(fruits[i],100);
+                  comeAndGo(fruit,'center', 2, 200);
+                  wait(2);
+                  fruit.click(cutFruit);
+                }
+              
+                function cutFruit() {
+                   vanish(this);
+                   score = score + 1;
+                   updateText(scoreText, score);
+                  /* ************ H O M E W O R K *************** */
+                  
+                  /* Add “you win”, when scores equal fruits.length */
+               
+                  
+                
+                  
+                  
+                  
+                }
+                
+                
+            });
+        </script>
+    </body>
+</html>
