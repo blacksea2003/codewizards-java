@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="climate.css" rel="stylesheet"/>
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet">
+  <script src="http://projects.codewizardshq.com/codewizards.js"></script>
+  <title>Rain maker</title>
+</head>
+<body>
+  <div id="canvas"></div>
+  <script>
+      $(document).ready(function() {
+        start();
+        
+        addHeading('Rain Maker', 50);
+        addBackground('background.png');
+        var birdSound = addSound('birds.mp3');
+        birdSound.play();
+        
+        var humidity = prompt('Enter humidity Value');
+        
+        if(humidity > 50 && humidity <= 100){
+          var cloud = addImage('clouds.png',1000);
+        } else if(humidity < 50){
+          var sun = addImage('sun.png',100);
+        } else if(humidity == 50){
+          var sun = addImage('sun.png',100);
+           var cloud = addImage('clouds.png',1000);
+        } else if(humidity > 100){
+         var cloud = addImage('clouds.png',1000);
+            addRaindrop(100, -70, 2000);
+          
+            /* HOMEWORK  :  Add 25 raindrops and make them fall from sky */
+
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        }
+        
+        function addRaindrop(x, y, speed){
+          var rainDrop = addImage('raindrop.png', 10);
+          positionEl(rainDrop, x, y);
+          moveY(rainDrop, y, 800, 'infinite', false, speed);
+        }
+          
+      });
+  </script>
+</body>
+</html>
